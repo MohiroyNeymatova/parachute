@@ -1,0 +1,41 @@
+from django.urls import path, include
+from .views import *
+
+
+urlpatterns = [
+    path('dashboard/', index_view, name='index'),
+    path('login/', login_view, name='login'),
+    path('logout/', logout_view, name='logout'),
+    path('settings/', settings, name='settings'),
+    path('buildings/', buildings, name='buildings'),
+    path('floors/', floors, name='floors'),
+    path('rooms/', rooms, name='rooms'),
+    path('objects/', objects, name='objects'),
+    path('categories/', categories, name='categories'),
+    path('items/', items, name='items'),
+    path('building_delete/<int:pk>/', building_delete, name='building_delete'),
+    path('category_delete/<int:pk>/', category_delete, name='category_delete'),
+    path('floor_delete/<int:pk>/', floor_delete, name='floor_delete'),
+    path('item_delete/<int:pk>/', item_delete, name='item_delete'),
+    path('object_delete/<int:pk>/', object_delete, name='object_delete'),
+    path('room_delete/<int:pk>/', room_delete, name='room_delete'),
+    path('building_update/<int:pk>/', building_update, name='building_update'),
+    path('category_update/<int:pk>/', category_update, name='category_update'),
+    path('floor_update/<int:pk>/', floor_update, name='floor_update'),
+    path('item_update/<int:pk>/', item_update, name='item_update'),
+    path('object_update/<int:pk>/', object_update, name='object_update'),
+    path('room_update/<int:pk>/', room_update, name='room_update'),
+    path('building_create/', building_create, name='building_create'),
+    path('category_create/', category_create, name='category_create'),
+    path('floor_create/', floor_create, name='floor_create'),
+    path('item_create/', item_create, name='item_create'),
+    path('object_create/', object_create, name='object_create'),
+    path('room_create/', room_create, name='room_create'),
+    path('building_details/<int:pk>/', building_details, name='building_details'),
+    path('floor_details/<int:pk>/', floor_details, name='floor_details'),
+    path('room_details/<int:pk>/', room_details, name='room_details'),
+    path('telegram_users/', telegram_users, name='telegram_users'),
+    path('telegram_user_create/', telegram_user_create, name='telegram_user_create'),
+    path('telegram_user_update/<int:pk>/', telegram_user_update, name='telegram_user_update'),
+    path('telegram_user_delete/<int:pk>/', telegram_user_delete, name='telegram_user_delete')
+]

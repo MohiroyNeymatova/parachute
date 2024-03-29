@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="app-content">
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="page-description">
+                        <h1>Object Update</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="example-container">
+                                <div class="example-content">
+                                    <form class="row g-3" method="post">
+                                        {% csrf_token %}
+                                        <div class="col-6">
+                                            <label for="category" class="form-label">Category</label>
+                                            <select class="form-control" name="category">
+                                                {% for i in categories %}
+                                                    {% if object.category.id == i.id %}
+                                                    <option value="{{i.id}}" selected>{{i.name}}</option>
+                                                    {% else %}
+                                                    <option value="{{i.id}}">{{i.name}}</option>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="name" class="form-label">Name</label>
+                                            <input type="text" class="form-control" name="name" value="{{object.name}}">
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary">Update</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

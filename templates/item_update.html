@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="app-content">
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="page-description">
+                        <h1>Floor Update</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="example-container">
+                                <div class="example-content">
+                                    <form class="row g-3" method="post">
+                                        {% csrf_token %}
+                                        <div class="col-6">
+                                           <label for="room" class="form-label">Room</label>
+                                            <select class="form-control" name="room">
+                                                {% for i in rooms %}
+                                                    {% if item.room_id == i.id %}
+                                                    <option value="{{i.id}}" selected>{{i.name}}</option>
+                                                    {% else %}
+                                                    <option value="{{i.id}}">{{i.name}}</option>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="object" class="form-label">Object</label>
+                                            <select class="form-control" name="object">
+                                                {% for i in objects %}
+                                                    {% if item.object_id == i.id %}
+                                                    <option value="{{i.id}}" selected>{{i.name}}</option>
+                                                    {% else %}
+                                                    <option value="{{i.id}}">{{i.name}}</option>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="quantity" class="form-label">Quantity</label>
+                                            <input type="number" class="form-control" name="quantity" value="{{item.quantity}}">
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary">Update</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

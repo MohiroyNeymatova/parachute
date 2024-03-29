@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="app-content">
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="page-description d-flex align-items-center">
+                        <div class="page-description-content flex-grow-1">
+                            <h1>About {{room.name}}-Room</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Room</h5>
+                    </div>
+                <div class="card-body">
+                    <div class="example-container">
+                        <div class="example-content">
+                            <table class="table">
+                                <thead class="table-dark">
+                                <tr>
+                                    <th width="100%" class="text-center">Name</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="text-center">{{room.name}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Items</h5>
+                    </div>
+                <div class="card-body">
+                    <div class="example-container">
+                        <div class="example-content">
+                            <table class="table">
+                                <thead class="table-dark">
+                                <tr>
+                                    <th width="70%" class="text-center">Name</th>
+                                    <th width="30%" class="text-center">Quantity</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for i in items %}
+                                <tr>
+                                    <td class="text-center">{{i.object.name}}</td>
+                                    <td class="text-center">{{i.quantity}}</td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

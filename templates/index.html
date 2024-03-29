@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="app-content">
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="page-description d-flex align-items-center">
+                        <div class="page-description-content flex-grow-1">
+                            <h1>Dashboard</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card widget widget-stats">
+                        <div class="card-body">
+                            <div class="widget-stats-container d-flex">
+                                <div class="widget-stats-icon widget-stats-icon-primary">
+                                    <img src="/media/icons8-building-50.png" width="50" height="60">
+                                </div>
+                                <div class="widget-stats-content flex-fill">
+                                    <span class="widget-stats-title"><a href="{% url 'buildings' %}">Building</a></span>
+                                    <span class="widget-stats-amount">{{buildings}} Objects</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card widget widget-stats">
+                        <div class="card-body">
+                            <div class="widget-stats-container d-flex">
+                                <div class="widget-stats-icon widget-stats-icon-primary">
+                                    <img src="/media/icons8-category-50.png" width="50" height="60">
+                                </div>
+                                <div class="widget-stats-content flex-fill">
+                                    <span class="widget-stats-title"><a href="{% url 'categories' %}">Category</a></span>
+                                    <span class="widget-stats-amount">{{categories}} Objects</span>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-md-4">
+                    <div class="card widget widget-stats">
+                        <div class="card-body">
+                            <div class="widget-stats-container d-flex">
+                                <div class="widget-stats-icon widget-stats-icon-primary">
+                                    <img src="/media/icons8-item-50.png" width="50" height="60">
+                                </div>
+                                <div class="widget-stats-content flex-fill">
+                                    <span class="widget-stats-title"><a href="{% url 'items' %}">Item</a></span>
+                                    <span class="widget-stats-amount">{{items}} Objects</span>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-md-4">
+                    <div class="card widget widget-stats">
+                        <div class="card-body">
+                            <div class="widget-stats-container d-flex">
+                                <div class="widget-stats-icon widget-stats-icon-primary">
+                                    <img src="/media/icons8-object-50.png" width="50" height="60">
+                                </div>
+                                <div class="widget-stats-content flex-fill">
+                                    <span class="widget-stats-title"><a href="{% url 'objects' %}">Object</a></span>
+                                    <span class="widget-stats-amount">{{objects}} Objects</span>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-md-4">
+                    <div class="card widget widget-stats">
+                        <div class="card-body">
+                            <div class="widget-stats-container d-flex">
+                                <div class="widget-stats-icon widget-stats-icon-primary">
+                                    <img src="/media/icons8-room-50.png" width="50" height="60">
+                                </div>
+                                <div class="widget-stats-content flex-fill">
+                                    <span class="widget-stats-title"><a href="{% url 'rooms' %}">Room</a></span>
+                                    <span class="widget-stats-amount">{{rooms}} Objects</span>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-md-4">
+                    <div class="card widget widget-stats">
+                        <div class="card-body">
+                            <div class="widget-stats-container d-flex">
+                                <div class="widget-stats-icon widget-stats-icon-primary">
+                                    <img src="/media/icons8-stairs-50.png" width="50" height="60">
+                                </div>
+                                <div class="widget-stats-content flex-fill">
+                                    <span class="widget-stats-title"><a href="{% url 'floors' %}">Floor</a></span>
+                                    <span class="widget-stats-amount">{{floors}} Objects</span>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-md-4">
+                    <div class="card widget widget-stats">
+                        <div class="card-body">
+                            <div class="widget-stats-container d-flex">
+                                <div class="widget-stats-icon widget-stats-icon-primary">
+                                    <img src="/media/icons8-telegram-50.png" width="50" height="60">
+                                </div>
+                                <div class="widget-stats-content flex-fill">
+                                    <span class="widget-stats-title"><a href="{% url 'telegram_users' %}">Telegram User</a></span>
+                                    <span class="widget-stats-amount">{{telegram_users}} Objects</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

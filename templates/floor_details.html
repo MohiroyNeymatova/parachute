@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="app-content">
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="page-description d-flex align-items-center">
+                        <div class="page-description-content flex-grow-1">
+                            <h1>About {{floor.number}}-Floor</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Floor</h5>
+                    </div>
+                <div class="card-body">
+                    <div class="example-container">
+                        <div class="example-content">
+                            <table class="table">
+                                <thead class="table-dark">
+                                <tr>
+                                    <th width="100%" class="text-center">Number</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="text-center">{{floor.number}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Rooms</h5>
+                    </div>
+                <div class="card-body">
+                    <div class="example-container">
+                        <div class="example-content">
+                            <table class="table">
+                                <thead class="table-dark">
+                                <tr>
+                                    <th width="100%" class="text-center">Name</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for i in rooms %}
+                                <tr>
+                                    <td class="text-center"><a href="{% url 'room_details' i.id %}">{{i.name}}</a></td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

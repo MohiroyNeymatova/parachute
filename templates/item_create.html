@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="app-content">
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="page-description">
+                        <h1>Item Create</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="example-container">
+                                <div class="example-content">
+                                    <form class="row g-3" method="post">
+                                        {% csrf_token %}
+                                        <div class="col-6">
+                                           <label for="room" class="form-label">Room</label>
+                                            <select class="form-control" name="room" required>
+                                                <option value="" disabled selected>Choose Room</option>
+                                                {% for i in rooms %}
+                                                <option value="{{i.id}}">{{i.name}}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="object" class="form-label">Object</label>
+                                            <select class="form-control" name="object" required>
+                                                <option value="" disabled selected>Choose Object</option>
+                                                {% for i in objects %}
+                                                <option value="{{i.id}}">{{i.name}}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="quantity" class="form-label">Quantity</label>
+                                            <input type="number" class="form-control" name="quantity" required>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary">Create</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

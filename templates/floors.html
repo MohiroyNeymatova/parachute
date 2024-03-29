@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="app-content">
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="page-description d-flex align-items-center">
+                        <div class="page-description-content flex-grow-1">
+                            <h1>Floors</h1>
+                        </div>
+                        <div class="page-description-actions">
+                            <a href="{% url 'floor_create' %}" class="btn btn-primary"><i class="material-icons">add</i>Create Floor</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="example-container">
+                            <div class="example-content">
+                                <table class="table">
+                                    <thead class="table-dark">
+                                    <tr>
+                                        <th width="5%" class="text-center">#</th>
+                                        <th width="22%" class="text-center">Number</th>
+                                        <th width="22%" class="text-center">Building</th>
+                                        <th width="22%" class="text-center">Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for i in floors %}
+                                    <tr>
+                                        <th scope="row">{{forloop.counter}}</th>
+                                        <td class="text-center"><a href="{% url 'floor_details' i.id %}">{{i.number}}</a></td>
+                                        <td class="text-center"><a href="{% url 'building_details' i.building.id %}">{{i.building.name}}</a></td>
+                                        <td class="text-center">
+                                            <a href="{% url 'floor_update' i.id %}" class="btn btn-warning"><span class="material-symbols-outlined">update</span></a>
+                                            <a href="{% url 'floor_delete' i.id %}" class="btn btn-danger"><span class="material-symbols-outlined">delete</span></a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+{% endblock %}
